@@ -180,6 +180,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '600',
     marginBottom: 2,
+    flexWrap: 'wrap',
   },
   itemBody: {
     fontSize: 13,

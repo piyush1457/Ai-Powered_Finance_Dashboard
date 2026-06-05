@@ -306,19 +306,23 @@ export const Transactions = () => {
             </View>
           </Pressable>
 
-          <Pressable style={styles.categoryCol} onPress={() => handleSort('category')}>
-            <View style={styles.thContent}>
-              <Text style={[styles.thText, { color: colors.textMuted }]}>CATEGORY</Text>
-              <ArrowUpDown size={10} color={colors.textMuted} />
-            </View>
-          </Pressable>
+          {!isMobile && (
+            <Pressable style={styles.categoryCol} onPress={() => handleSort('category')}>
+              <View style={styles.thContent}>
+                <Text style={[styles.thText, { color: colors.textMuted }]}>CATEGORY</Text>
+                <ArrowUpDown size={10} color={colors.textMuted} />
+              </View>
+            </Pressable>
+          )}
 
-          <Pressable style={styles.statusCol} onPress={() => handleSort('status')}>
-            <View style={styles.thContent}>
-              <Text style={[styles.thText, { color: colors.textMuted }]}>STATUS</Text>
-              <ArrowUpDown size={10} color={colors.textMuted} />
-            </View>
-          </Pressable>
+          {!isMobile && (
+            <Pressable style={styles.statusCol} onPress={() => handleSort('status')}>
+              <View style={styles.thContent}>
+                <Text style={[styles.thText, { color: colors.textMuted }]}>STATUS</Text>
+                <ArrowUpDown size={10} color={colors.textMuted} />
+              </View>
+            </Pressable>
+          )}
 
           <Pressable style={styles.amountCol} onPress={() => handleSort('amount')}>
             <View style={[styles.thContent, { justifyContent: 'flex-end' }]}>
@@ -350,22 +354,26 @@ export const Transactions = () => {
                   </View>
                 </View>
 
-                <View style={styles.categoryCol}>
-                  <View style={[styles.badge, { backgroundColor: colors.surfaceElevated }]}>
-                    <Text style={{ fontSize: 9.5, fontWeight: '600', color: colors.textSecondary }}>{tx.category}</Text>
+                {!isMobile && (
+                  <View style={styles.categoryCol}>
+                    <View style={[styles.badge, { backgroundColor: colors.surfaceElevated }]}>
+                      <Text style={{ fontSize: 9.5, fontWeight: '600', color: colors.textSecondary }}>{tx.category}</Text>
+                    </View>
                   </View>
-                </View>
+                )}
 
-                <View style={styles.statusCol}>
-                  <View style={styles.statusWrap}>
-                    {tx.status === 'CLEARED' ? (
-                      <CheckCircle size={12} color={tokens.colors.green} />
-                    ) : (
-                      <Clock size={12} color={tokens.colors.warning} />
-                    )}
-                    <Text style={{ color: colors.textSecondary, fontSize: 11, fontWeight: '500' }}>{tx.status}</Text>
+                {!isMobile && (
+                  <View style={styles.statusCol}>
+                    <View style={styles.statusWrap}>
+                      {tx.status === 'CLEARED' ? (
+                        <CheckCircle size={12} color={tokens.colors.green} />
+                      ) : (
+                        <Clock size={12} color={tokens.colors.warning} />
+                      )}
+                      <Text style={{ color: colors.textSecondary, fontSize: 11, fontWeight: '500' }}>{tx.status}</Text>
+                    </View>
                   </View>
-                </View>
+                )}
 
                 <View style={styles.amountCol}>
                   <Text style={[

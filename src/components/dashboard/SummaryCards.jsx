@@ -34,7 +34,7 @@ export const SummaryCards = memo(({ data, isLoading }) => {
       <Card style={[styles.card, isMobile && styles.mobileCard]}>
         <View style={[styles.cardBg, { backgroundImage: 'linear-gradient(135deg, transparent 60%, rgba(79, 156, 249, 0.05))' }]} pointerEvents="none" />
         <Text style={[styles.cardLabel, { color: colors.textMuted }]}>TOTAL NET WORTH</Text>
-        <Text style={[tokens.typography.display, { color: colors.textPrimary, marginBottom: 8 }]}>{formatCurrency(data.netWorth.value)}</Text>
+        <Text style={[tokens.typography.display, { color: colors.textPrimary, marginBottom: 8 }, isMobile && { fontSize: 24, lineHeight: 28 }]}>{formatCurrency(data.netWorth.value)}</Text>
         <View style={styles.trendRow}>
           <ArrowUpRight size={14} color={tokens.colors.green} />
           <Text style={{ color: tokens.colors.green, fontSize: 11, fontWeight: '500', marginLeft: 4 }}>
@@ -46,7 +46,7 @@ export const SummaryCards = memo(({ data, isLoading }) => {
       <Card style={[styles.card, isMobile && styles.mobileCard]}>
         <View style={[styles.cardBg, { backgroundImage: 'linear-gradient(135deg, transparent 60%, rgba(245, 200, 66, 0.05))' }]} pointerEvents="none" />
         <Text style={[styles.cardLabel, { color: colors.textMuted }]}>MONTHLY SPENDING</Text>
-        <Text style={[tokens.typography.display, { color: colors.textPrimary, marginBottom: 8 }]}>{formatCurrency(data.monthlySpending.value)}</Text>
+        <Text style={[tokens.typography.display, { color: colors.textPrimary, marginBottom: 8 }, isMobile && { fontSize: 24, lineHeight: 28 }]}>{formatCurrency(data.monthlySpending.value)}</Text>
         <View style={styles.trendRow}>
           <ArrowUpRight size={14} color={tokens.colors.gold} />
           <Text style={{ color: tokens.colors.gold, fontSize: 11, fontWeight: '500', marginLeft: 4 }}>
@@ -58,7 +58,7 @@ export const SummaryCards = memo(({ data, isLoading }) => {
       <Card style={[styles.card, isMobile && styles.mobileCard]}>
         <View style={[styles.cardBg, { backgroundImage: 'linear-gradient(135deg, transparent 60%, rgba(0, 229, 192, 0.05))' }]} pointerEvents="none" />
         <Text style={[styles.cardLabel, { color: colors.textMuted }]}>TOTAL SAVINGS</Text>
-        <Text style={[tokens.typography.display, { color: colors.textPrimary, marginBottom: 8 }]}>{formatCurrency(data.totalSavings.value)}</Text>
+        <Text style={[tokens.typography.display, { color: colors.textPrimary, marginBottom: 8 }, isMobile && { fontSize: 24, lineHeight: 28 }]}>{formatCurrency(data.totalSavings.value)}</Text>
         <View style={styles.trendRow}>
           <CheckCircle2 size={14} color={tokens.colors.primary} />
           <Text style={{ color: tokens.colors.primary, fontSize: 11, fontWeight: '500', marginLeft: 4 }}>

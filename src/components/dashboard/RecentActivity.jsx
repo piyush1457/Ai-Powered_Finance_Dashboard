@@ -1,5 +1,5 @@
 import React, { memo, useState, useMemo } from 'react';
-import { View, Text, StyleSheet, TextInput, Pressable } from 'react-native';
+import { View, Text, StyleSheet, TextInput, Pressable, useWindowDimensions } from 'react-native';
 import { List as FixedSizeList } from 'react-window';
 import { useTheme } from '../../context/ThemeContext';
 import { tokens } from '../../styles/tokens';
@@ -16,7 +16,7 @@ import { TransactionFilter } from './TransactionFilter';
 
 const ICONS = { ShoppingBag, Utensils, Zap, DollarSign, ShoppingCart, Tv, Car, Music, Plane, Cloud, Circle };
 
-const TransactionRow = memo(({ tx, rowStyle, colors, trackEvent }) => {
+const TransactionRow = memo(({ tx, rowStyle, colors, trackEvent, isMobile }) => {
   const Icon = ICONS[tx.icon] || ICONS.Circle;
 
   return (
@@ -30,18 +30,22 @@ const TransactionRow = memo(({ tx, rowStyle, colors, trackEvent }) => {
         <Text style={[styles.dateText, { color: colors.textMuted }]} numberOfLines={1}>{tx.date} • {tx.time}</Text>
       </View>
       
-      <View style={styles.badgeCol}>
-        <View style={[styles.tag, { backgroundColor: `${colors.primary}15` }]}>
-          <Text style={[styles.tagText, { color: tokens.colors.primary }]}>{tx.category}</Text>
+      {!isMobile && (
+        <View style={styles.badgeCol}>
+          <View style={[styles.tag, { backgroundColor: `${colors.primary}15` }]}>
+            <Text style={[styles.tagText, { color: tokens.colors.primary }]}>{tx.category}</Text>
+          </View>
         </View>
-      </View>
+      )}
       
-      <View style={styles.statusCol}>
-        <View style={styles.statusWrap}>
-          <View style={[styles.statusDot, { backgroundColor: tx.status === 'CLEARED' ? tokens.colors.green : tokens.colors.warning }]} />
-          <Text style={[styles.statusText, { color: colors.textSecondary }]}>{tx.status}</Text>
+      {!isMobile && (
+        <View style={styles.statusCol}>
+          <View style={styles.statusWrap}>
+            <View style={[styles.statusDot, { backgroundColor: tx.status === 'CLEARED' ? tokens.colors.green : tokens.colors.warning }]} />
+            <Text style={[styles.statusText, { color: colors.textSecondary }]}>{tx.status}</Text>
+          </View>
         </View>
-      </View>
+      )}
       
       <View style={styles.amountCol}>
         <Text style={[
@@ -58,6 +62,8 @@ const TransactionRow = memo(({ tx, rowStyle, colors, trackEvent }) => {
 export const RecentActivity = memo(({ data, isLoading, style }) => {
   const { colors } = useTheme();
   const { trackEvent } = useAnalytics();
+  const { width } = useWindowDimensions();
+  const isMobile = width < 768;
   const { showToast } = useToast();
   const [searchValue, setSearchValue] = useState('');
   const [advancedFilters, setAdvancedFilters] = useState({
@@ -110,8 +116,8 @@ export const RecentActivity = memo(({ data, isLoading, style }) => {
 
   const renderRow = React.useCallback(({ index, style: rowStyle }) => {
     const tx = filteredData[index];
-    return <TransactionRow tx={tx} rowStyle={rowStyle} colors={colors} trackEvent={trackEvent} />;
-  }, [filteredData, colors, trackEvent]);
+    return <TransactionRow tx={tx} rowStyle={rowStyle} colors={colors} trackEvent={trackEvent} isMobile={isMobile} />;
+  }, [filteredData, colors, trackEvent, isMobile]);
 
   if (isLoading) {
     return (
@@ -159,8 +165,8 @@ export const RecentActivity = memo(({ data, isLoading, style }) => {
       <View style={[styles.card, { backgroundColor: colors.surface, borderColor: colors.border }]}>
         <View style={[styles.tableHeader, { backgroundColor: colors.surfaceElevated, borderBottomColor: colors.border }]}>
           <View style={[styles.merchantCol, { paddingLeft: 56 }]}><Text style={[styles.thText, { color: colors.textMuted }]}>MERCHANT</Text></View>
-          <View style={styles.badgeCol}><Text style={[styles.thText, { color: colors.textMuted }]}>CATEGORY</Text></View>
-          <View style={styles.statusCol}><Text style={[styles.thText, { color: colors.textMuted }]}>STATUS</Text></View>
+          {!isMobile && <View style={styles.badgeCol}><Text style={[styles.thText, { color: colors.textMuted }]}>CATEGORY</Text></View>}
+          {!isMobile && <View style={styles.statusCol}><Text style={[styles.thText, { color: colors.textMuted }]}>STATUS</Text></View>}
           <View style={styles.amountCol}><Text style={[styles.thText, { color: colors.textMuted, textAlign: 'right' }]}>AMOUNT</Text></View>
         </View>
 
