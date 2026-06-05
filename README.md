@@ -97,31 +97,3 @@ npm run build
 ```
 
 ***
-
-## Quick Deployment Guide
-
-### Vercel Deployment
-1. Install the Vercel CLI globally or use the [Vercel Dashboard](https://vercel.com).
-2. Run `vercel` in the project root:
-   ```bash
-   vercel
-   ```
-3. Accept the default configuration (Vite project configuration will automatically be detected).
-4. Run `vercel --prod` to deploy to production.
-
-### Netlify Deployment
-1. Create a `netlify.toml` file in the root directory:
-   ```toml
-   [build]
-     publish = "dist"
-     command = "npm run build"
-   
-   [[redirects]]
-     from = "/*"
-     to = "/index.html"
-     status = 200
-   ```
-2. Import the repository into Netlify or use the Netlify CLI to deploy:
-   ```bash
-   netlify deploy --prod
-   ```
