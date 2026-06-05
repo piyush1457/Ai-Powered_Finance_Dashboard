@@ -1,16 +1,17 @@
-# Proton Finance — Wealth Curator Dashboard
+# Proton Finance - Wealth Curator Dashboard
 
 An AI-powered personal finance and wealth management dashboard designed for modern wealth curation. This application is built using a React + Vite stack paired with React Native Web for cross-platform layout support.
 
----
+***
 
-## 🚀 Deployment Links
-* **GitHub Repository**: https://github.com/piyush1457/Ai-Powered_Finance_Dashboard
-* **Live Deployed App**: [Vercel / Netlify Link Placeholder] *(e.g., https://proton-finance-wealth-curator.vercel.app)*
+## Deployment Links
 
----
+* **GitHub Repository**: [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/piyush1457/Ai-Powered_Finance_Dashboard)
+* **Live Deployed App**: [![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)](https://ai-powered-finance-dashboard-ashen.vercel.app/dashboard)
 
-## 🏛️ Architectural Decisions
+***
+
+## Architectural Decisions
 
 1. **Vite Bundler**:
    * Chosen for sub-second hot module reloading (HMR), treeshaking, and highly optimized Rolldown production building.
@@ -23,9 +24,9 @@ An AI-powered personal finance and wealth management dashboard designed for mode
 5. **Client-Side Storage Engine (LocalStorage Mock Database)**:
    * Keeps mock data interactive (e.g., simulating initial balances, adjusting budget caps, removing bank integrations, dismissing alerts) by initializing and synchronizing data via `localStorage`.
 
----
+***
 
-## ⚓ Custom Hooks Explanation
+## Custom Hooks Explanation
 
 * **[`useFetch`](file:///c:/Users/piyus/Desktop/Assignment/AI-Powered%20Finance%20Dashboard%20(Personal%20Finance)/src/hooks/useFetch.js)**:
   * Manages AJAX/fetch states (`data`, `loading`, `error`, `refetch`).
@@ -37,9 +38,9 @@ An AI-powered personal finance and wealth management dashboard designed for mode
 * **[`useDebounce`](file:///c:/Users/piyus/Desktop/Assignment/AI-Powered%20Finance%20Dashboard%20(Personal%20Finance)/src/hooks/useDebounce.js)**:
   * Delays reactive triggers on rapid keystrokes (e.g., searching transactions), preventing duplicate calculations or DOM paint choke points.
 
----
+***
 
-## ⚡ Performance Optimizations
+## Performance Optimizations
 
 1. **Route-Level Code Splitting**:
    * Page files (Dashboard, Accounts, Budgets, Insights, Transactions) are wrapped in `React.lazy()` and rendered within a `Suspense` wrapper. Users only download files required for their active page view.
@@ -51,9 +52,9 @@ An AI-powered personal finance and wealth management dashboard designed for mode
 4. **Numeric Native Styling**:
    * Replaced string style coordinates (e.g., `padding: '10px 14px'`) with split numeric properties (`paddingVertical: 10`, `paddingHorizontal: 14`) to prevent CSS parsing engine errors in the React Native Web layer.
 
----
+***
 
-## 🔍 SEO Techniques Used
+## SEO Techniques Used
 
 1. **Dynamic Metadata & Document Head Control**:
    * Uses `react-helmet-async` on all views (e.g., [Dashboard.jsx](file:///c:/Users/piyus/Desktop/Assignment/AI-Powered%20Finance%20Dashboard%20(Personal%20Finance)/src/pages/Dashboard.jsx), [Budgets.jsx](file:///c:/Users/piyus/Desktop/Assignment/AI-Powered%20Finance%20Dashboard%20(Personal%20Finance)/src/pages/Budgets.jsx)) to specify descriptive title tags, meta descriptions, and OpenGraph parameters.
@@ -64,9 +65,9 @@ An AI-powered personal finance and wealth management dashboard designed for mode
 4. **Accessible Elements & IDs**:
    * Interactive components, links, and search items include descriptive `accessibilityLabel` tags and unique `testID` markers.
 
----
+***
 
-## ⚖️ Trade-offs
+## Trade-offs
 
 1. **React Native Web Layouts**:
    * *Pros*: Enables clean compile targets for physical mobile apps in React Native.
@@ -78,9 +79,9 @@ An AI-powered personal finance and wealth management dashboard designed for mode
    * *Pros*: Clean, interactive SVG graphs with responsive container capabilities.
    * *Cons*: Not natively compatible with React Native canvas; on native mobile apps, this will need to be ported to library equivalents like `react-native-svg-charts`.
 
----
+***
 
-## 🛠️ Installation & Verification
+## Installation & Verification
 
 To run this application locally:
 
@@ -95,9 +96,9 @@ npm run dev
 npm run build
 ```
 
----
+***
 
-## 🚀 Quick Deployment Guide
+## Quick Deployment Guide
 
 ### Vercel Deployment
 1. Install the Vercel CLI globally or use the [Vercel Dashboard](https://vercel.com).
