@@ -181,9 +181,9 @@ export const Budgets = () => {
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
       <Helmet>
-        <title>Proton Finance — Wealth Curator | Budgets</title>
+        <title>Proton Finance | Wealth Curator | Budgets</title>
         <meta name="description" content="Manage your monthly budget and view spending history." />
-        <meta property="og:title" content="Proton Finance — Wealth Curator | Budgets" />
+        <meta property="og:title" content="Proton Finance | Wealth Curator | Budgets" />
         <meta property="og:type" content="website" />
       </Helmet>
       <View style={[styles.header, isMobile && styles.mobileHeader]}>

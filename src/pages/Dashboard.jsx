@@ -25,9 +25,9 @@ export default function Dashboard() {
   return (
     <View style={styles.container}>
       <Helmet>
-        <title>Proton Finance — Wealth Curator | Dashboard</title>
+        <title>Proton Finance | Wealth Curator | Dashboard</title>
         <meta name="description" content="Premium AI-powered personal finance dashboard. Track net worth, optimize spending, and execute intelligent investment strategies." />
-        <meta property="og:title" content="Proton Finance — Wealth Curator" />
+        <meta property="og:title" content="Proton Finance | Wealth Curator" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/og-image.png" />
         <meta name="twitter:card" content="summary_large_image" />

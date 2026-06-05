@@ -115,9 +115,9 @@ export const Insights = () => {
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
       <Helmet>
-        <title>Proton Finance — Wealth Curator | Insights</title>
+        <title>Proton Finance | Wealth Curator | Insights</title>
         <meta name="description" content="AI-powered insights for your portfolio." />
-        <meta property="og:title" content="Proton Finance — Wealth Curator | Insights" />
+        <meta property="og:title" content="Proton Finance | Wealth Curator | Insights" />
         <meta property="og:type" content="website" />
       </Helmet>
       <View style={styles.header}>

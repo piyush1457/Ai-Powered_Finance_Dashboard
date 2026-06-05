@@ -156,7 +156,7 @@ export const Accounts = () => {
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
       <Helmet>
-        <title>Proton Finance — Wealth Curator | Accounts</title>
+        <title>Proton Finance | Wealth Curator | Accounts</title>
         <meta name="description" content="Manage and sync checking, credit, and investment accounts." />
       </Helmet>
 

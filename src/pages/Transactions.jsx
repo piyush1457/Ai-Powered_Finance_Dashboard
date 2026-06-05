@@ -222,7 +222,7 @@ export const Transactions = () => {
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
       <Helmet>
-        <title>Proton Finance — Wealth Curator | Transactions</title>
+        <title>Proton Finance | Wealth Curator | Transactions</title>
         <meta name="description" content="Search, filter, and audit your personal finance transactional ledger histories." />
       </Helmet>
 
