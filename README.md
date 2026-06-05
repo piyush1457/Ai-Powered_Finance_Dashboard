@@ -5,7 +5,7 @@ An AI-powered personal finance and wealth management dashboard designed for mode
 ---
 
 ## 🚀 Deployment Links
-* **GitHub Repository**: [GitHub Link Placeholder] *(e.g., https://github.com/username/ai-powered-finance-dashboard)*
+* **GitHub Repository**: https://github.com/piyush1457/Ai-Powered_Finance_Dashboard
 * **Live Deployed App**: [Vercel / Netlify Link Placeholder] *(e.g., https://proton-finance-wealth-curator.vercel.app)*
 
 ---
