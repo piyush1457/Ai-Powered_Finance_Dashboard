@@ -18,20 +18,22 @@ export const Footer = () => {
 
   return (
     <>
-      <View 
-        accessibilityRole="contentinfo"
-        style={[styles.footer, isMobile && styles.footerMobile, { backgroundColor: colors.bg, borderTopColor: colors.border }]}
-      >
-        <Text style={[styles.text, { color: colors.textMuted }]}>
-          © 2024 Proton Finance. All financial data is encrypted and secure.
-        </Text>
-        
-        <View style={[styles.links, isMobile && styles.linksMobile]}>
-          <Pressable onPress={() => handleOpenLegal('privacy')}><Text style={[styles.link, { color: colors.textMuted }]}>Privacy Policy</Text></Pressable>
-          <Pressable onPress={() => handleOpenLegal('security')}><Text style={[styles.link, { color: colors.textMuted }]}>Security Audit</Text></Pressable>
-          <Pressable onPress={() => handleOpenLegal('terms')}><Text style={[styles.link, { color: colors.textMuted }]}>Terms</Text></Pressable>
+      {!isMobile && (
+        <View 
+          accessibilityRole="contentinfo"
+          style={[styles.footer, { backgroundColor: colors.bg, borderTopColor: colors.border }]}
+        >
+          <Text style={[styles.text, { color: colors.textMuted }]}>
+            © 2026 Proton Finance. All financial data is encrypted and secure.
+          </Text>
+          
+          <View style={styles.links}>
+            <Pressable onPress={() => handleOpenLegal('privacy')}><Text style={[styles.link, { color: colors.textMuted }]}>Privacy Policy</Text></Pressable>
+            <Pressable onPress={() => handleOpenLegal('security')}><Text style={[styles.link, { color: colors.textMuted }]}>Security Audit</Text></Pressable>
+            <Pressable onPress={() => handleOpenLegal('terms')}><Text style={[styles.link, { color: colors.textMuted }]}>Terms</Text></Pressable>
+          </View>
         </View>
-      </View>
+      )}
 
       <LegalModal 
         isOpen={legalModalOpen} 
